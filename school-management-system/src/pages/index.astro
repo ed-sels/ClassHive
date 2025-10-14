@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/NavBar.astro";
+import Hero from "../components/Hero.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="ClassHive - School Management System">
+  <Navbar />
+  <Hero />
+  <section id="features" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12">Core Features</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <FeatureCard 
+          title="Attendance Tracking"
+          description="Record and monitor student attendance in real time."
+          icon="/icons/attendance.svg"
+        />
+        <FeatureCard 
+          title="Grading System"
+          description="Easily manage grades and generate report cards."
+          icon="/icons/grades.svg"
+        />
+        <FeatureCard 
+          title="Fee Management"
+          description="Track payments, dues, and automate reminders."
+          icon="/icons/fees.svg"
+        />
+      </div>
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>
