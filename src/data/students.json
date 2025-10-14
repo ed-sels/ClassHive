@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Alice Johnson", "class": "Grade 6", "attendance": 95, "grade": "A", "fees": "Paid" },
+  { "id": 2, "name": "Michael Smith", "class": "Grade 5", "attendance": 88, "grade": "B", "fees": "Pending" },
+  { "id": 3, "name": "Sophia Lee", "class": "Grade 4", "attendance": 92, "grade": "A", "fees": "Paid" },
+  { "id": 4, "name": "James Carter", "class": "Grade 6", "attendance": 80, "grade": "C", "fees": "Pending" }
+]
