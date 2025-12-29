@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GES Academic Management System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',      // slate-900
+            soft: '#f8fafc',     // slate-50
+            accent: '#2563eb',   // blue-600
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-soft text-gray-800">
+
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2 font-semibold text-ink">
+      📘 <span>GES Academic System</span>
+    </div>
+
+    <nav class="hidden md:flex space-x-6 text-sm text-gray-600">
+      <a href="#" class="hover:text-accent">Features</a>
+      <a href="#" class="hover:text-accent">Dashboards</a>
+      <a href="#" class="hover:text-accent">BECE</a>
+      <a href="#" class="hover:text-accent">Support</a>
+    </nav>
+
+    <a href="#"
+       class="text-sm bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-700">
+      Login
+    </a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-slate-50"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 py-24 text-center">
+    <h1 class="text-3xl md:text-4xl font-semibold text-ink leading-tight">
+      Organise Learning. <br class="hidden md:block">
+      Understand Progress. <br class="hidden md:block">
+      Prepare for BECE.
+    </h1>
+
+    <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+      A calm, intelligent academic management system for Ghanaian
+      Basic Schools — from KG to JHS — fully aligned with GES standards.
+    </p>
+
+    <div class="mt-10 flex justify-center gap-4">
+      <a href="#"
+         class="bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-blue-700">
+        Get Started
+      </a>
+      <a href="#"
+         class="bg-white border px-6 py-3 rounded-lg text-sm hover:bg-gray-100">
+        View Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="max-w-6xl mx-auto px-4 py-20">
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <!-- Card -->
+    <div class="bg-white border rounded-xl p-6">
+      <div class="text-accent mb-4">
+        📄
+      </div>
+      <h3 class="font-semibold text-lg text-ink">
+        Student & Assessment Records
+      </h3>
+      <p class="mt-3 text-sm text-gray-600">
+        Capture student profiles, SBA components, exams, grades,
+        and promotion decisions using official GES rules.
+      </p>
+    </div>
+
+    <div class="bg-white border rounded-xl p-6">
+      <div class="text-accent mb-4">
+        🏅
+      </div>
+      <h3 class="font-semibold text-lg text-ink">
+        Order of Merit & Reports
+      </h3>
+      <p class="mt-3 text-sm text-gray-600">
+        Automatically rank students by class and school and
+        generate clean, printable report cards and merit sheets.
+      </p>
+    </div>
+
+    <div class="bg-white border rounded-xl p-6">
+      <div class="text-accent mb-4">
+        📊
+      </div>
+      <h3 class="font-semibold text-lg text-ink">
+        BECE Readiness Analytics
+      </h3>
+      <p class="mt-3 text-sm text-gray-600">
+        Track JHS 3 readiness using core subjects, identify
+        at-risk learners early, and plan interventions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= AUDIENCE ================= -->
+<section class="bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <h2 class="text-2xl font-semibold text-ink text-center">
+      Designed for Real School Work
+    </h2>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6 text-sm">
+
+      <div class="p-6 border rounded-xl">
+        <h4 class="font-semibold text-ink">Headteachers</h4>
+        <p class="mt-3 text-gray-600">
+          Gain clear insight into school performance, BECE readiness,
+          and learner outcomes — without complexity.
+        </p>
+      </div>
+
+      <div class="p-6 border rounded-xl">
+        <h4 class="font-semibold text-ink">Teachers</h4>
+        <p class="mt-3 text-gray-600">
+          Enter scores once and let the system handle grading,
+          promotion decisions, and reporting.
+        </p>
+      </div>
+
+      <div class="p-6 border rounded-xl">
+        <h4 class="font-semibold text-ink">Parents</h4>
+        <p class="mt-3 text-gray-600">
+          Receive short, respectful SMS or WhatsApp updates
+          on learner progress and important alerts.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 py-24 text-center">
+    <h2 class="text-2xl font-semibold text-ink">
+      Calm Technology for Better Learning Decisions
+    </h2>
+
+    <p class="mt-4 text-gray-600">
+      Built for low data usage, mobile access, and professional printing.
+    </p>
+
+    <a href="#"
+       class="inline-block mt-8 bg-accent text-white px-8 py-3 rounded-lg text-sm hover:bg-blue-700">
+      Start Using the System
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t bg-white">
+  <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+    <span>© 2026 GES Academic System</span>
+    <span>Built for Ghana Basic Schools</span>
+  </div>
+</footer>
+
+</body>
+</html>
