@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | GES Academic System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            accent: '#2563eb',
+            soft: '#f8fafc'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="min-h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- ================= OVERLAY ================= -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-900/40 to-blue-900/40"></div>
+
+<!-- ================= LOGIN CARD ================= -->
+<div class="relative w-full max-w-md mx-auto px-4">
+  <div class="
+  bg-white/20        
+  backdrop-blur-3xl  
+  backdrop-saturate-150
+  border border-white/30
+  ring-1 ring-white/20
+  rounded-2xl
+  p-8
+  shadow-lg shadow-black/20
+  bg-gradient-to-br from-white/30 to-white/10
+">
+
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="text-3xl mb-2">📘</div>
+      <h1 class="text-xl font-semibold text-ink">
+        GES Academic System
+      </h1>
+      <p class="mt-2 text-sm text-gray-600">
+        Sign in to manage school records
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-5">
+
+      <!-- Username -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">
+          Username or Phone
+        </label>
+        <input
+          type="text"
+          placeholder="e.g. 024XXXXXXX"
+          class="
+            w-full
+            rounded-lg
+            border border-gray-300
+            bg-white/80
+            px-4 py-2.5
+            text-sm
+            focus:outline-none
+            focus:ring-2
+            focus:ring-accent
+          "
+        />
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">
+          Password
+        </label>
+        <input
+          type="password"
+          placeholder="••••••••"
+          class="
+            w-full
+            rounded-lg
+            border border-gray-300
+            bg-white/80
+            px-4 py-2.5
+            text-sm
+            focus:outline-none
+            focus:ring-2
+            focus:ring-accent
+          "
+        />
+      </div>
+
+      <!-- Remember / Forgot -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-gray-600">
+          <input type="checkbox" class="rounded border-gray-300">
+          Remember me
+        </label>
+
+        <a href="#" class="text-accent hover:underline">
+          Forgot password?
+        </a>
+      </div>
+
+      <!-- Login Button -->
+      <button
+        type="submit"
+        class="
+          w-full
+          bg-accent
+          text-white
+          py-3
+          rounded-lg
+          text-sm
+          font-medium
+          hover:bg-blue-700
+          transition
+        "
+      >
+        Sign In
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <p class="mt-8 text-xs text-center text-gray-500">
+      Authorized staff only • GES Basic Schools (KG–JHS)
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>
