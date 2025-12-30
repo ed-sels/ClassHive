@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Profile | GES Academic System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center relative"
+  style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-900/50 to-blue-900/50"></div>
+
+<div class="relative z-10 min-h-screen">
+
+  <!-- ===== HEADER ===== -->
+  <header class="flex items-center justify-between px-6 py-4">
+    <h1 class="text-lg font-semibold text-white">👤 Student Profile</h1>
+
+    <a href="students.html" class="text-sm text-white/80 hover:underline">
+      ← Back to Students
+    </a>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="px-6 pb-10 space-y-6">
+
+    <!-- ===== STUDENT BIO ===== -->
+    <section class="glass-section">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">
+            Ama Mensah
+          </h2>
+          <p class="text-sm text-white/70">
+            JHS 2 • Female • DOB: 12 Mar 2011
+          </p>
+        </div>
+
+        <div>
+          <span class="badge success">
+            PROMOTED
+          </span>
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-sm text-white/90">
+        <div>
+          <p class="label">Student ID</p>
+          <p>GES-JHS2-014</p>
+        </div>
+        <div>
+          <p class="label">Average Score</p>
+          <p>86%</p>
+        </div>
+        <div>
+          <p class="label">Class Position</p>
+          <p>3rd</p>
+        </div>
+        <div>
+          <p class="label">School Position</p>
+          <p>12th</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GUARDIAN INFO ===== -->
+    <section class="glass-section">
+      <h3 class="section-title">👨‍👩‍👧 Guardian Information</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 text-sm text-white/90">
+        <div>
+          <p class="label">Guardian Name</p>
+          <p>Mrs. Efua Mensah</p>
+        </div>
+        <div>
+          <p class="label">Phone</p>
+          <p>024 123 4567</p>
+        </div>
+        <div>
+          <p class="label">Relationship</p>
+          <p>Mother</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SUBJECT PERFORMANCE ===== -->
+    <section class="glass-section">
+      <h3 class="section-title">📚 Subject Performance</h3>
+
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full text-sm text-white/90">
+          <thead class="text-xs uppercase text-white/60 border-b border-white/20">
+            <tr>
+              <th class="py-2">Subject</th>
+              <th>Class Score</th>
+              <th>Exam</th>
+              <th>Final</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            <tr>
+              <td class="py-2">English Language</td>
+              <td>44</td>
+              <td>42</td>
+              <td>86</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td class="py-2">Mathematics</td>
+              <td>40</td>
+              <td>38</td>
+              <td>78</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td class="py-2">Integrated Science</td>
+              <td>41</td>
+              <td>39</td>
+              <td>80</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td class="py-2">Social Studies</td>
+              <td>43</td>
+              <td>41</td>
+              <td>84</td>
+              <td>A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== ACTIONS ===== -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <button class="action-btn">📝 Enter Scores</button>
+      <button class="action-btn">📄 Report Card</button>
+      <button class="action-btn">📊 Order of Merit</button>
+      <button class="action-btn">📩 Notify Parent</button>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== STYLES ===== -->
+<style>
+  .glass-section {
+    background: linear-gradient(to bottom right, rgba(255,255,255,.25), rgba(255,255,255,.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: .95rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .label {
+    font-size: .7rem;
+    opacity: .7;
+  }
+
+  .badge {
+    padding: .4rem .75rem;
+    border-radius: 1rem;
+    font-size: .7rem;
+    font-weight: 600;
+  }
+
+  .success { background: rgba(34,197,94,.35); }
+
+  .action-btn {
+    background: rgba(255,255,255,.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+    padding: .75rem;
+    border-radius: .75rem;
+    font-size: .8rem;
+    transition: .2s;
+  }
+
+  .action-btn:hover {
+    background: rgba(255,255,255,.3);
+  }
+</style>
+
+</body>
+</html>

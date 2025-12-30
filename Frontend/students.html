@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students | GES Academic System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center relative"
+  style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-900/50 to-blue-900/50"></div>
+
+<div class="relative z-10 min-h-screen">
+
+  <!-- ===== HEADER ===== -->
+  <header class="flex items-center justify-between px-6 py-4">
+    <h1 class="text-lg font-semibold text-white">👩🏽‍🎓 Students</h1>
+
+    <a href="dashboard.html" class="text-sm text-white/80 hover:underline">
+      ← Back to Dashboard
+    </a>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="px-6 pb-10 space-y-6">
+
+    <!-- ===== FILTERS ===== -->
+    <section class="glass-card flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+
+      <div class="flex gap-3">
+        <select class="input">
+          <option>All Classes</option>
+          <option>KG 1</option>
+          <option>KG 2</option>
+          <option>Primary 1</option>
+          <option>Primary 2</option>
+          <option>Primary 3</option>
+          <option>Primary 4</option>
+          <option>Primary 5</option>
+          <option>Primary 6</option>
+          <option>JHS 1</option>
+          <option>JHS 2</option>
+          <option>JHS 3</option>
+        </select>
+
+        <input
+          type="text"
+          placeholder="Search student name..."
+          class="input"
+        />
+      </div>
+
+      <button class="btn-primary">
+        ➕ Add Student
+      </button>
+
+    </section>
+
+    <!-- ===== STUDENT TABLE ===== -->
+    <section class="glass-section overflow-x-auto">
+
+      <table class="w-full text-sm text-white/90">
+        <thead class="text-left text-xs uppercase text-white/60 border-b border-white/20">
+          <tr>
+            <th class="py-3">Name</th>
+            <th>Class</th>
+            <th>Gender</th>
+            <th>Average</th>
+            <th>Status</th>
+            <th class="text-right">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-white/10">
+
+          <tr>
+            <td class="py-3">Ama Mensah</td>
+            <td>JHS 2</td>
+            <td>Female</td>
+            <td>86%</td>
+            <td>
+              <span class="badge success">Promoted</span>
+            </td>
+            <td class="text-right space-x-2">
+              <button class="action">View</button>
+              <button class="action">Scores</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="py-3">Kwame Boateng</td>
+            <td>JHS 3</td>
+            <td>Male</td>
+            <td>64%</td>
+            <td>
+              <span class="badge warning">At Risk</span>
+            </td>
+            <td class="text-right space-x-2">
+              <button class="action">View</button>
+              <button class="action">Scores</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="py-3">Yaw Owusu</td>
+            <td>Primary 6</td>
+            <td>Male</td>
+            <td>47%</td>
+            <td>
+              <span class="badge info">On Trial</span>
+            </td>
+            <td class="text-right space-x-2">
+              <button class="action">View</button>
+              <button class="action">Scores</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== STYLES ===== -->
+<style>
+  .glass-card,
+  .glass-section {
+    background: linear-gradient(to bottom right, rgba(255,255,255,.25), rgba(255,255,255,.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .glass-section {
+    padding: 1.25rem;
+  }
+
+  .input {
+    background: rgba(255,255,255,.85);
+    border-radius: .5rem;
+    padding: .5rem .75rem;
+    font-size: .85rem;
+    outline: none;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: white;
+    padding: .6rem 1rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+  }
+
+  .badge {
+    padding: .25rem .5rem;
+    border-radius: .5rem;
+    font-size: .7rem;
+    font-weight: 500;
+  }
+
+  .success { background: rgba(34,197,94,.3); }
+  .warning { background: rgba(234,179,8,.3); }
+  .info { background: rgba(59,130,246,.3); }
+
+  .action {
+    background: rgba(255,255,255,.2);
+    padding: .25rem .5rem;
+    border-radius: .4rem;
+    font-size: .7rem;
+  }
+
+  .action:hover {
+    background: rgba(255,255,255,.3);
+  }
+</style>
+
+</body>
+</html>

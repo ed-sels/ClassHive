@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | GES Academic System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Print Safety -->
+  <style>
+    @media print {
+      body {
+        background: white !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .glass {
+        background: white !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center p-4"
+  style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- OVERLAY -->
+<div class="absolute inset-0 bg-slate-900/30"></div>
+
+<!-- CONTAINER -->
+<div class="relative z-10">
+
+  <!-- HEADER -->
+  <header class="max-w-7xl mx-auto mb-6">
+    <div class="glass p-6 rounded-xl shadow-lg
+                bg-white/30 backdrop-blur-xl backdrop-saturate-150
+                border border-white/30 ring-1 ring-black/5">
+
+      <h1 class="text-xl font-bold text-slate-800">
+        📊 Admin Dashboard
+      </h1>
+      <p class="text-sm text-slate-600 mt-1">
+        School Performance Overview — GES Basic (KG–JHS)
+      </p>
+
+      <div class="mt-2 text-sm">
+        <strong>School:</strong> Hope International School |
+        <strong>Term:</strong> 2 |
+        <strong>Academic Year:</strong> 2024 / 2025
+      </div>
+    </div>
+  </header>
+
+  <!-- KPI CARDS -->
+  <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+
+    <!-- Total Students -->
+    <div class="glass p-5 rounded-xl shadow
+                bg-white/30 backdrop-blur-xl border border-white/30">
+      <p class="text-sm text-gray-200">Total Students</p>
+      <h2 class="text-2xl font-bold text-white mt-1">624</h2>
+      <p class="text-xs text-gray-300 mt-1">KG – JHS 3</p>
+    </div>
+
+    <!-- Promoted -->
+    <div class="glass p-5 rounded-xl shadow
+                bg-green-100/30 backdrop-blur-xl border border-green-200">
+      <p class="text-sm text-green-800">Promoted</p>
+      <h2 class="text-2xl font-bold text-green-900 mt-1">512</h2>
+      <p class="text-xs text-green-700 mt-1">≥ 50%</p>
+    </div>
+
+    <!-- Trial -->
+    <div class="glass p-5 rounded-xl shadow
+                bg-orange-100/30 backdrop-blur-xl border border-orange-200">
+      <p class="text-sm text-orange-800">Promoted on Trial</p>
+      <h2 class="text-2xl font-bold text-orange-900 mt-1">64</h2>
+      <p class="text-xs text-orange-700 mt-1">45 – 49%</p>
+    </div>
+
+    <!-- Repeated -->
+    <div class="glass p-5 rounded-xl shadow
+                bg-red-100/30 backdrop-blur-xl border border-red-200">
+      <p class="text-sm text-red-800">Repeated</p>
+      <h2 class="text-2xl font-bold text-red-900 mt-1">48</h2>
+      <p class="text-xs text-red-700 mt-1">&lt; 45%</p>
+    </div>
+
+  </section>
+
+  <!-- SECOND ROW -->
+  <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- BECE READINESS -->
+    <div class="glass p-6 rounded-xl shadow
+                bg-white/30 backdrop-blur-xl border border-white/30 text-white">
+      <h3 class="font-semibold mb-4">
+        🎯 BECE Readiness (JHS 3)
+      </h3>
+
+      <ul class="text-sm space-y-2">
+        <li>Ready (75–100): <strong>38</strong></li>
+        <li>Almost Ready (65–74): <strong>26</strong></li>
+        <li>At Risk (50–64): <strong>19</strong></li>
+        <li class="text-red-300 font-semibold">
+          High Risk (&lt;50): 11
+        </li>
+      </ul>
+    </div>
+
+    <!-- TOP STUDENTS -->
+    <div class="glass p-6 rounded-xl shadow
+                bg-white/30 backdrop-blur-xl border border-white/30 text-white">
+      <h3 class="font-semibold mb-4">
+        🏆 Top Students (Overall)
+      </h3>
+
+      <ol class="text-sm list-decimal ml-4 space-y-1">
+        <li>Ama Mensah – JHS 3 (88%)</li>
+        <li>Kwame Boateng – JHS 2 (85%)</li>
+        <li>Efua Asare – JHS 1 (83%)</li>
+        <li>Yaw Owusu – JHS 2 (82%)</li>
+        <li>Abena Serwaa – JHS 3 (81%)</li>
+      </ol>
+    </div>
+
+    <!-- HIGH RISK -->
+    <div class="glass p-6 rounded-xl shadow
+                bg-red-50/30 backdrop-blur-xl border border-red-200 text-red-800">
+      <h3 class="font-semibold mb-4">
+        🚨 High-Risk Students
+      </h3>
+
+      <ul class="text-sm space-y-2">
+        <li>Kojo Mensimah – JHS 3 (39%)</li>
+        <li>Akua Darko – JHS 2 (41%)</li>
+        <li>Yaw Antwi – JHS 1 (44%)</li>
+      </ul>
+
+      <p class="text-xs mt-3">
+        Immediate intervention recommended
+      </p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>
