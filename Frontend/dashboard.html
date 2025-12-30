@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | GES Academic System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center relative"
+  style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-900/50 to-blue-900/50"></div>
+
+<!-- ================= MAIN ================= -->
+<div class="relative z-10 min-h-screen">
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="flex items-center justify-between px-6 py-4">
+    <h1 class="text-lg font-semibold text-white">📘 GES Dashboard</h1>
+
+    <div class="flex items-center gap-3 text-sm text-white/80">
+      <span>Headteacher</span>
+      <a href="homepage.html"><button class="bg-white/20 px-3 py-1 rounded-lg hover:bg-white/30">
+        Logout
+      </button></a>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="px-6 pb-10 space-y-8">
+
+    <!-- ===== METRICS ===== -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <div class="glass-card">
+        <p class="metric-title">Students</p>
+        <h2 class="metric-value">428</h2>
+      </div>
+
+      <div class="glass-card">
+        <p class="metric-title">Teachers</p>
+        <h2 class="metric-value">24</h2>
+      </div>
+
+      <div class="glass-card">
+        <p class="metric-title">Pass Rate</p>
+        <h2 class="metric-value">82%</h2>
+      </div>
+
+      <div class="glass-card">
+        <p class="metric-title">At Risk</p>
+        <h2 class="metric-value text-red-300">17</h2>
+      </div>
+
+    </section>
+
+    <!-- ===== BECE READINESS ===== -->
+    <section class="glass-section">
+      <h2 class="section-title">📈 BECE Readiness (JHS 3)</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-sm">
+        <div class="status ready">Ready<br><strong>38%</strong></div>
+        <div class="status almost">Almost Ready<br><strong>27%</strong></div>
+        <div class="status risk">At Risk<br><strong>21%</strong></div>
+        <div class="status highrisk">High Risk<br><strong>14%</strong></div>
+      </div>
+    </section>
+
+    <!-- ===== TOP STUDENTS ===== -->
+    <section class="glass-section">
+      <h2 class="section-title">🏆 Top Performing Students</h2>
+
+      <ul class="mt-4 space-y-3 text-sm text-white/90">
+        <li class="flex justify-between">
+          <span>1. Ama Mensah (JHS 2)</span>
+          <span>91%</span>
+        </li>
+        <li class="flex justify-between">
+          <span>2. Kwame Boateng (JHS 3)</span>
+          <span>89%</span>
+        </li>
+        <li class="flex justify-between">
+          <span>3. Yaw Owusu (JHS 1)</span>
+          <span>88%</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== QUICK ACTIONS ===== -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <button class="action-btn">➕ Add Student</button>
+      <button class="action-btn">📝 Enter Scores</button>
+      <button class="action-btn">📄 Reports</button>
+      <button class="action-btn">📢 Messages</button>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== STYLES ===== -->
+<style>
+  .glass-card {
+    background: linear-gradient(to bottom right, rgba(255,255,255,.25), rgba(255,255,255,.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+  }
+
+  .metric-title {
+    font-size: 0.75rem;
+    opacity: .8;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .glass-section {
+    background: linear-gradient(to bottom right, rgba(255,255,255,.25), rgba(255,255,255,.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    color: white;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .status {
+    border-radius: .75rem;
+    padding: .75rem;
+    text-align: center;
+  }
+
+  .ready { background: rgba(34,197,94,.3); }
+  .almost { background: rgba(234,179,8,.3); }
+  .risk { background: rgba(249,115,22,.3); }
+  .highrisk { background: rgba(239,68,68,.3); }
+
+  .action-btn {
+    background: rgba(255,255,255,.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+    padding: .75rem;
+    border-radius: .75rem;
+    font-size: .85rem;
+    transition: all .2s;
+  }
+
+  .action-btn:hover {
+    background: rgba(255,255,255,.3);
+  }
+</style>
+
+</body>
+</html>

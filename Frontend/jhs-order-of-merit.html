@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JHS 1–3 Combined Order of Merit | GES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Print Safety -->
+  <style>
+    @media print {
+      body {
+        background: white !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .sheet {
+        background: white !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 p-4">
+
+<!-- PRINT BUTTON -->
+<div class="no-print mb-4 text-right max-w-6xl mx-auto">
+  <button onclick="window.print()"
+    class="bg-blue-700 text-white px-4 py-2 rounded text-sm shadow">
+    🖨️ Print Combined Order of Merit
+  </button>
+</div>
+
+<!-- GLASSY SHEET -->
+<div
+  class="
+    max-w-6xl mx-auto p-6 sheet
+    bg-white/70
+    backdrop-blur-xl
+    backdrop-saturate-150
+    border border-white/40
+    ring-1 ring-black/5
+    rounded-xl
+    shadow-lg shadow-black/10
+  "
+>
+
+  <!-- HEADER -->
+  <div class="text-center border-b pb-4 mb-6">
+    <h1 class="text-xl font-bold uppercase">
+      Ghana Education Service
+    </h1>
+    <p class="text-sm font-medium">
+      JHS 1–3 Combined Order of Merit
+    </p>
+
+    <div class="mt-2 text-sm">
+      <strong>School:</strong> Hope International School<br>
+      <strong>Academic Year:</strong> 2024 / 2025 &nbsp; | &nbsp;
+      <strong>Term:</strong> 2
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <table class="w-full border text-sm bg-white">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border p-2">Overall Pos.</th>
+        <th class="border p-2 text-left">Student Name</th>
+        <th class="border p-2">Class</th>
+        <th class="border p-2">Gender</th>
+        <th class="border p-2">Average (%)</th>
+        <th class="border p-2">Decision</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <!-- BEST STUDENT -->
+      <tr class="bg-yellow-100 font-bold">
+        <td class="border p-2 text-center">1</td>
+        <td class="border p-2">Ama Mensah ⭐</td>
+        <td class="border p-2 text-center">JHS 3</td>
+        <td class="border p-2 text-center">F</td>
+        <td class="border p-2 text-center">88</td>
+        <td class="border p-2 text-center">Promoted</td>
+      </tr>
+
+      <!-- TOP 10 -->
+      <tr class="bg-green-50">
+        <td class="border p-2 text-center">2</td>
+        <td class="border p-2">Kwame Boateng</td>
+        <td class="border p-2 text-center">JHS 2</td>
+        <td class="border p-2 text-center">M</td>
+        <td class="border p-2 text-center">85</td>
+        <td class="border p-2 text-center">Promoted</td>
+      </tr>
+
+      <tr class="bg-green-50">
+        <td class="border p-2 text-center">3</td>
+        <td class="border p-2">Efua Asare</td>
+        <td class="border p-2 text-center">JHS 1</td>
+        <td class="border p-2 text-center">F</td>
+        <td class="border p-2 text-center">83</td>
+        <td class="border p-2 text-center">Promoted</td>
+      </tr>
+
+      <!-- NORMAL -->
+      <tr>
+        <td class="border p-2 text-center">18</td>
+        <td class="border p-2">Yaw Owusu</td>
+        <td class="border p-2 text-center">JHS 2</td>
+        <td class="border p-2 text-center">M</td>
+        <td class="border p-2 text-center">64</td>
+        <td class="border p-2 text-center">Promoted</td>
+      </tr>
+
+      <!-- PROMOTED ON TRIAL -->
+      <tr class="bg-orange-50">
+        <td class="border p-2 text-center">29</td>
+        <td class="border p-2">Akosua Nyame</td>
+        <td class="border p-2 text-center">JHS 1</td>
+        <td class="border p-2 text-center">F</td>
+        <td class="border p-2 text-center">47</td>
+        <td class="border p-2 text-center font-semibold">
+          Promoted on Trial
+        </td>
+      </tr>
+
+      <!-- REPEATED -->
+      <tr class="bg-red-50">
+        <td class="border p-2 text-center">41</td>
+        <td class="border p-2">Kojo Mensimah</td>
+        <td class="border p-2 text-center">JHS 3</td>
+        <td class="border p-2 text-center">M</td>
+        <td class="border p-2 text-center">39</td>
+        <td class="border p-2 text-center font-semibold">
+          Repeated
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="grid grid-cols-2 gap-6 mt-8 text-sm">
+    <div>
+      <p class="border-t pt-2">Headteacher’s Signature</p>
+    </div>
+    <div>
+      <p class="border-t pt-2">GES Supervisor / Circuit Officer</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

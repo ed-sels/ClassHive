@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter Scores | GES Academic System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#2563eb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center relative"
+  style="background-image: url('img/bg-login.jpg');"
+>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-900/50 to-blue-900/50"></div>
+
+<div class="relative z-10 min-h-screen">
+
+  <!-- HEADER -->
+  <header class="flex items-center justify-between px-6 py-4">
+    <h1 class="text-lg font-semibold text-white">📝 Enter Scores</h1>
+    <a href="student-profile.html" class="text-sm text-white/80 hover:underline">
+      ← Back to Profile
+    </a>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="px-6 pb-10 space-y-6">
+
+    <!-- STUDENT INFO -->
+    <section class="glass-section">
+      <h2 class="text-white font-semibold">Ama Mensah</h2>
+      <p class="text-sm text-white/70">JHS 2 • English Language</p>
+    </section>
+
+    <!-- SCORE ENTRY -->
+    <section class="glass-section space-y-5">
+
+      <h3 class="section-title">Continuous Assessment (100)</h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <input class="input" placeholder="Test 1" type="number" />
+        <input class="input" placeholder="Test 2" type="number" />
+        <input class="input" placeholder="Group Work" type="number" />
+        <input class="input" placeholder="Project Work" type="number" />
+      </div>
+
+      <div class="flex justify-between text-sm text-white/80 mt-2">
+        <span>Class Score (50)</span>
+        <strong>44</strong>
+      </div>
+
+    </section>
+
+    <!-- EXAM -->
+    <section class="glass-section space-y-4">
+      <h3 class="section-title">Exam Score (100)</h3>
+
+      <input
+        type="number"
+        class="input w-full"
+        placeholder="Enter exam score"
+      />
+
+      <div class="flex justify-between text-sm text-white/80">
+        <span>Converted Exam (50)</span>
+        <strong>42</strong>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="glass-section">
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+
+        <div>
+          <p class="label">Final Score</p>
+          <h3 class="value">86</h3>
+        </div>
+
+        <div>
+          <p class="label">Grade</p>
+          <h3 class="value">A</h3>
+        </div>
+
+        <div>
+          <p class="label">Decision</p>
+          <h3 class="value text-green-300">PROMOTED</h3>
+        </div>
+
+        <div>
+          <p class="label">Position</p>
+          <h3 class="value">—</h3>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ACTIONS -->
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <button class="action-btn">💾 Save Scores</button>
+      <button class="action-btn">➡️ Next Subject</button>
+      <button class="action-btn">📄 Preview Report</button>
+    </section>
+
+  </main>
+</div>
+
+<!-- STYLES -->
+<style>
+  .glass-section {
+    background: linear-gradient(to bottom right, rgba(255,255,255,.25), rgba(255,255,255,.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    color: white;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+
+  .input {
+    background: rgba(255,255,255,.85);
+    padding: .6rem .75rem;
+    border-radius: .5rem;
+    font-size: .85rem;
+    width: 100%;
+  }
+
+  .label {
+    font-size: .7rem;
+    opacity: .7;
+  }
+
+  .value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .action-btn {
+    background: rgba(255,255,255,.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+    padding: .75rem;
+    border-radius: .75rem;
+    font-size: .8rem;
+  }
+
+  .action-btn:hover {
+    background: rgba(255,255,255,.3);
+  }
+</style>
+
+</body>
+</html>
