@@ -54,15 +54,15 @@
       <h3 class="section-title">Continuous Assessment (100)</h3>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <input class="input" placeholder="Test 1" type="number" />
-        <input class="input" placeholder="Test 2" type="number" />
-        <input class="input" placeholder="Group Work" type="number" />
-        <input class="input" placeholder="Project Work" type="number" />
+        <input id="test1" class="input" placeholder="Test 1" type="number" />
+        <input id="test2" class="input" placeholder="Test 2" type="number" />
+        <input id="groupWork" class="input" placeholder="Group Work" type="number" />
+        <input id="projectWork" class="input" placeholder="Project Work" type="number" />
       </div>
 
       <div class="flex justify-between text-sm text-white/80 mt-2">
         <span>Class Score (50)</span>
-        <strong>44</strong>
+        <strong id="classScoreDisplay">0</strong>
       </div>
 
     </section>
@@ -72,6 +72,7 @@
       <h3 class="section-title">Exam Score (100)</h3>
 
       <input
+        id="examScore"
         type="number"
         class="input w-full"
         placeholder="Enter exam score"
@@ -79,7 +80,7 @@
 
       <div class="flex justify-between text-sm text-white/80">
         <span>Converted Exam (50)</span>
-        <strong>42</strong>
+        <strong id="examScoreDisplay">0</strong>
       </div>
     </section>
 
@@ -90,22 +91,22 @@
 
         <div>
           <p class="label">Final Score</p>
-          <h3 class="value">86</h3>
+          <h3 id="finalScoreDisplay" class="value">0</h3>
         </div>
 
         <div>
           <p class="label">Grade</p>
-          <h3 class="value">A</h3>
+          <h3 id="gradeDisplay" class="value">—</h3>
         </div>
 
         <div>
           <p class="label">Decision</p>
-          <h3 class="value text-green-300">PROMOTED</h3>
+          <h3 id="decisionDisplay" class="value">—</h3>
         </div>
 
         <div>
           <p class="label">Position</p>
-          <h3 class="value">—</h3>
+          <h3 id="positionDisplay" class="value">—</h3>
         </div>
 
       </div>
@@ -114,7 +115,7 @@
 
     <!-- ACTIONS -->
     <section class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <button class="action-btn">💾 Save Scores</button>
+      <button id="saveBtn" class="action-btn">💾 Save Scores</button>
       <button class="action-btn">➡️ Next Subject</button>
       <button class="action-btn">📄 Preview Report</button>
     </section>
@@ -170,6 +171,87 @@
     background: rgba(255,255,255,.3);
   }
 </style>
+<script>
+  const inputs = ['test1', 'test2', 'groupWork', 'projectWork', 'examScore'];
+  const displays = {
+    classScore: document.getElementById('classScoreDisplay'),
+    examScore: document.getElementById('examScoreDisplay'),
+    finalScore: document.getElementById('finalScoreDisplay'),
+    grade: document.getElementById('gradeDisplay'),
+    decision: document.getElementById('decisionDisplay')
+  };
+
+  const calculate = () => {
+    const t1 = parseFloat(document.getElementById('test1').value) || 0;
+    const t2 = parseFloat(document.getElementById('test2').value) || 0;
+    const gw = parseFloat(document.getElementById('groupWork').value) || 0;
+    const pw = parseFloat(document.getElementById('projectWork').value) || 0;
+    const es = parseFloat(document.getElementById('examScore').value) || 0;
+
+    const classScoreTotal = t1 + t2 + gw + pw;
+    const convertedClass = (classScoreTotal / 100) * 50;
+    const convertedExam = (es / 100) * 50;
+    const finalScore = convertedClass + convertedExam;
+
+    displays.classScore.innerText = convertedClass.toFixed(1);
+    displays.examScore.innerText = convertedExam.toFixed(1);
+    displays.finalScore.innerText = finalScore.toFixed(1);
+
+    let grade = 'F';
+    let decision = 'RETAINED';
+    let color = 'text-red-400';
+
+    if (finalScore >= 80) grade = 'A';
+    else if (finalScore >= 70) grade = 'B';
+    else if (finalScore >= 60) grade = 'C';
+    else if (finalScore >= 50) grade = 'D';
+
+    if (finalScore >= 50) {
+      decision = 'PROMOTED';
+      color = 'text-green-300';
+    }
+
+    displays.grade.innerText = grade;
+    displays.decision.innerText = decision;
+    displays.decision.className = `value ${color}`;
+  };
+
+  inputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', async () => {
+    const payload = {
+      studentId: 'placeholder-id', // This should be dynamic based on the selected student
+      subjectId: 'placeholder-subject',
+      test1: parseFloat(document.getElementById('test1').value) || 0,
+      test2: parseFloat(document.getElementById('test2').value) || 0,
+      groupWork: parseFloat(document.getElementById('groupWork').value) || 0,
+      projectWork: parseFloat(document.getElementById('projectWork').value) || 0,
+      examScore: parseFloat(document.getElementById('examScore').value) || 0,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5001/api/scores', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        alert('Scores saved successfully!');
+      } else {
+        const error = await response.json();
+        alert('Error: ' + error.error);
+      }
+    } catch (error) {
+      alert('Failed to save scores. Ensure server is running.');
+    }
+  });
+</script>
 
 </body>
 </html>
